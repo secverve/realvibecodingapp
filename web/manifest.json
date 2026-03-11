@@ -1,0 +1,12 @@
+{
+  "name": "Couple Diary",
+  "short_name": "CoupleDiary",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#FFF8FB",
+  "theme_color": "#FF8FB1",
+  "description": "A lightweight emotional couple diary app.",
+  "orientation": "portrait-primary",
+  "prefer_related_applications": false,
+  "icons": []
+}
