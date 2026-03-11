@@ -1,0 +1,26 @@
+name: realvibecodingapp
+
+description: 감성 커플 기록용 Flutter Web/iOS MVP 앱
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.4.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+  intl: ^0.19.0
+  image_picker: ^1.1.2
+  table_calendar: ^3.1.2
+  crypto: ^3.0.5
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
