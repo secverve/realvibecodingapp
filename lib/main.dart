@@ -69,7 +69,7 @@ class ProfileInfo {
 
 enum WriterType { me, partner }
 
-enum DiaryMood { 설렘, 행복, 평온, 고마움, 보고싶음 }
+enum DiaryMood { flutter, happy, calm, thankful, missing }
 
 extension WriterTypeLabel on WriterType {
   String label(ProfileInfo profile) =>
@@ -82,32 +82,45 @@ extension WriterTypeLabel on WriterType {
 extension DiaryMoodUi on DiaryMood {
   String get emoji {
     switch (this) {
-      case DiaryMood.설렘:
+      case DiaryMood.flutter:
         return '💞';
-      case DiaryMood.행복:
+      case DiaryMood.happy:
         return '😊';
-      case DiaryMood.평온:
+      case DiaryMood.calm:
         return '🌿';
-      case DiaryMood.고마움:
+      case DiaryMood.thankful:
         return '🙏';
-      case DiaryMood.보고싶음:
+      case DiaryMood.missing:
         return '🥹';
     }
   }
 
-  String get label => name;
+  String get label {
+    switch (this) {
+      case DiaryMood.flutter:
+        return '설렘';
+      case DiaryMood.happy:
+        return '행복';
+      case DiaryMood.calm:
+        return '평온';
+      case DiaryMood.thankful:
+        return '고마움';
+      case DiaryMood.missing:
+        return '보고싶음';
+    }
+  }
 
   IconData get icon {
     switch (this) {
-      case DiaryMood.설렘:
+      case DiaryMood.flutter:
         return Icons.favorite_rounded;
-      case DiaryMood.행복:
+      case DiaryMood.happy:
         return Icons.sentiment_very_satisfied_rounded;
-      case DiaryMood.평온:
+      case DiaryMood.calm:
         return Icons.spa_rounded;
-      case DiaryMood.고마움:
+      case DiaryMood.thankful:
         return Icons.volunteer_activism_rounded;
-      case DiaryMood.보고싶음:
+      case DiaryMood.missing:
         return Icons.auto_awesome_rounded;
     }
   }
@@ -586,7 +599,7 @@ class _DiaryWriteScreenState extends State<DiaryWriteScreen> {
   final _contentController = TextEditingController();
 
   DateTime _date = DateTime.now();
-  DiaryMood _mood = DiaryMood.설렘;
+  DiaryMood _mood = DiaryMood.flutter;
   WriterType _author = WriterType.me;
 
   @override
